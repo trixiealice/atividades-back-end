@@ -28,6 +28,15 @@ entradaDeDados.question('Digite o seu nome: ', function(nome){
                     }
                     
                     let valorFinal = (Number(valorProduto) * (1 + Number(taxaJuros)) ** vezesParcela)
+
+                    console.log(`******************* VIVA MODA *******************\n
+                                Muito obrigado por realizar a sua compra conosco Sr(a) ${nomeCliente}.\n
+                                A compra do produto xxxxxxxxx, tem um valor de: ${valorProduto}.\n
+                                A sua compra será parcelada em ${vezesParcela} vezes e o Sr(a) pagará: ${valorFinal}.\n
+                                O acréscimo realizado ao valor de: ${valorProduto} será de ${taxaJuros}.\n
+                                \n
+                                Muito obrigado por escolher a VIVA MODA.\n
+****************                ***************************************`)
                 
                 })
             })
