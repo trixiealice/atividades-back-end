@@ -1,7 +1,7 @@
 const readline = require('readline')
 const entradaDeDados = readline.createInterface ({
-    input: process.constrainedMemory,
-    output: process.stderr.out
+    input: process.stdin,
+    output: process.stdout
 })
 
 entradaDeDados.question('Digite o seu nome: ', function(nome){
@@ -27,16 +27,16 @@ entradaDeDados.question('Digite o seu nome: ', function(nome){
                         console.log('ERRO: A CHARACTERS QUE NÃO SÃO NÚMEROS NOS VALORES')
                     }
                     
-                    let valorFinal = (Number(valorProduto) * (1 + Number(taxaJuros)) ** vezesParcela)
+                    let valorFinal = (Number(valorProduto) * (1 + Number(taxaJuros) / 100) ** Number(vezesParcela))
 
-                    console.log(`******************* VIVA MODA *******************\n
-                                Muito obrigado por realizar a sua compra conosco Sr(a) ${nomeCliente}.\n
-                                A compra do produto xxxxxxxxx, tem um valor de: ${valorProduto}.\n
-                                A sua compra será parcelada em ${vezesParcela} vezes e o Sr(a) pagará: ${valorFinal}.\n
-                                O acréscimo realizado ao valor de: ${valorProduto} será de ${taxaJuros}.\n
-                                \n
-                                Muito obrigado por escolher a VIVA MODA.\n
-****************                ***************************************`)
+                    console.log(`******************* VIVA MODA ************************\n
+Muito obrigado por realizar a sua compra conosco Sr(a) ${nomeCliente}.\n
+A compra do produto ${nomeProduto}, tem um valor de: ${valorProduto}.\n
+A sua compra será parcelada em ${vezesParcela} vezes e o Sr(a) pagará: ${valorFinal.toFixed(2)}.\n
+O acréscimo realizado ao valor de: ${valorProduto} será de ${taxaJuros}.\n
+\n
+Muito obrigado por escolher a VIVA MODA.\n
+*******************************************************`)
                 
                 })
             })
